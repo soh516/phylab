@@ -1,3 +1,9 @@
+##################################################
+I need to remove /etc/sysconfig/rhn/systemid 
+to get the machine unregistered before deployment
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+#################################################
+
 2017-07-07-phy-img
 - bootstrap_lab
 - yum install git
