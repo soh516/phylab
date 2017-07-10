@@ -38,7 +38,6 @@ elif [[ $hn == *"USASK.CA"* ]];
 then
   hn=${hn//.USASK.CA/}
 fi
-hn+="L" 
 nmcli general hostname $hn
 systemctl restart systemd-hostnamed
 net ads join -U soh516 createcomputer=ResearchComputingOU/PHYOU
