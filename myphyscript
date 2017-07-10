@@ -51,7 +51,7 @@ systemctl start sssd.service
 sleep 5
 systemctl restart sssd.service
 
-echo "nfsfiles.usask.ca:/home    /home    nfs    sec=krb5,exec,vers=3   0  0" >> /etc/fstab
+echo "nfsfiles.usask.ca:/home    /home    nfs    sec=krb5,exec,vers=3,_netdev   0  0" >> /etc/fstab
 
 mount -a
 
