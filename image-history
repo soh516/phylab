@@ -7,3 +7,15 @@ to get the machine unregistered before deployment
 2017-07-07-phy-img
 - bootstrap_lab
 - yum install git
+
+2017-07-10-phy-img
+- get rid of user name @ login
+touch /etc/dconf/db/gdm.d/01-custom-gdm-settings
+echo "[org/gnome/login-screen]" > /etc/dconf/db/gdm.d/01-custom-gdm-settings
+echo "disable-user-list=true" >> /etc/dconf/db/gdm.d/01-custom-gdm-settings
+dconf update
+reboot
+- no passwd sudo
+vi /etc/sudoers
+- remove rhn registration
+mv /etc/sysconfig/rhn/systemid /etc/sysconfig/rhn/systemid_old
