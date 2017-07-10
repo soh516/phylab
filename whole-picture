@@ -1,3 +1,7 @@
 - deploy image
+  make sure it is not registered - "yum repolist"
+
 - boot_strap
+  make sure it is registered - "yum repolist"
+
 - run script
