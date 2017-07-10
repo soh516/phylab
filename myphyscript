@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# registration with rhn
+sh /home/hus/Downloads/bootstrap_lab.sh
+
 yum -y install nfs-utils
 yum -y install samba 
 yum -y install sssd-ad 
