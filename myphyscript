@@ -10,13 +10,6 @@ yum -y install sssd-ldap
 
 yum -y install sssd-client.i686 
 
-# get rid of user list @ login screen
-touch /etc/dconf/db/gdm.d/01-custom-gdm-settings
-echo "[org/gnome/login-screen]" > /etc/dconf/db/gdm.d/01-custom-gdm-settings
-echo "disable-user-list=true" >> /etc/dconf/db/gdm.d/01-custom-gdm-settings
-dconf update
-systemctl restart gdm
-
 # enable kerberos
 authconfig --enablekrb5 --update --krb5realm=USASK.CA --krb5kdc=usaskdc5.usask.ca,usaskdc2.usask.ca,usaskdc6.usask.ca 
 
