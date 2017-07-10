@@ -1,0 +1,63 @@
+#!/bin/bash
+
+yum -y install nfs-utils
+yum -y install samba 
+yum -y install sssd-ad 
+yum -y install cyrus-sasl-gssapi 
+
+yum -y install sssd-krb5
+yum -y install sssd-ldap
+
+yum -y install sssd-client.i686 
+
+# get rid of user list @ login screen
+touch /etc/dconf/db/gdm.d/01-custom-gdm-settings
+echo "[org/gnome/login-screen]" > /etc/dconf/db/gdm.d/01-custom-gdm-settings
+echo "disable-user-list=true" >> /etc/dconf/db/gdm.d/01-custom-gdm-settings
+dconf update
+systemctl restart gdm
+
+# enable kerberos
+authconfig --enablekrb5 --update --krb5realm=USASK.CA --krb5kdc=usaskdc5.usask.ca,usaskdc2.usask.ca,usaskdc6.usask.ca 
+
+#setup files required by sssd and nfs
+if [ ! -d "/mnt/eceappinstall" ]; then
+   mkdir -p /mnt/eceappinstall
+fi
+
+mount oneplus2:/var/www/html/repo /mnt/eceappinstall 
+
+\cp /mnt/eceappinstall/conffiles/krb5.conf /etc/ 
+\cp /mnt/eceappinstall/conffiles/smb.conf /etc/samba/ 
+hn=$(hostname) 
+#added in case hostname comes up with usask.ca or USASK.CA
+if [[ $hn == *"usask.ca"* ]]
+then
+  hn=${hn//.usask.ca/}
+elif [[ $hn == *"USASK.CA"* ]];
+then
+  hn=${hn//.USASK.CA/}
+fi
+hn+="L" 
+nmcli general hostname $hn
+systemctl restart systemd-hostnamed
+net ads join -U soh516 createcomputer=ResearchComputingOU/PHYOU
+\cp /mnt/eceappinstall/conffiles/nfs /etc/sysconfig/
+\cp /mnt/eceappinstall/conffiles/nsswitch.conf /etc/
+\cp /mnt/eceappinstall/conffiles/sssd_phy.conf /etc/sssd/ 
+\cp /mnt/eceappinstall/conffiles/idmapd.conf /etc/ 
+
+chmod 700 /etc/sssd/sssd.conf 
+
+systemctl enable nfs-client.target 
+systemctl start nfs-client.target
+systemctl enable sssd.service 
+systemctl start sssd.service 
+sleep 5
+systemctl restart sssd.service
+
+echo "nfsfiles.usask.ca:/home    /home    nfs    sec=krb5,exec,vers=3   0  0" >> /etc/fstab
+
+mount -a
+
+\cp /mnt/eceappinstall/conffiles/profile /etc/
