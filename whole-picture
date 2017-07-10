@@ -1,13 +1,10 @@
 - deploy image
   make sure it is not registered - "yum repolist"
-
-- boot_strap
-  make sure it is registered - "yum repolist"
+  verify no user list @ login
 
 - run script
 1. git clone https://github.com/soh516/phylab
 2. cd phylab
-3. sh myphyscript
-4. verify no user list @ login
-5. verify nfs mount
-6. verify /home/physics
+3. sh myphyscript - note bootstrap is embedded here
+4. verify nfs mount
+5. verify /home/physics
