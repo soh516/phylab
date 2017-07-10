@@ -5,3 +5,9 @@
   make sure it is registered - "yum repolist"
 
 - run script
+1. git clone https://github.com/soh516/phylab
+2. cd phylab
+3. sh myphyscript
+4. verify no user list @ login
+5. verify nfs mount
+6. verify /home/physics
