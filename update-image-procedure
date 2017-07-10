@@ -1,0 +1,5 @@
+
+
+1. cp new image to onplus5:/share/image
+2. modify pxelinux.cfg/default
+3. service xinetd restart
