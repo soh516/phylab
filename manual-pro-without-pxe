@@ -1,0 +1,15 @@
+usb #1: clonezilla
+usb #2: myscript
+boot from clonezilla
+enter command line
+sudo su -
+mount /dev/sdc1 /mnt
+sh /mnt/song-ocs-2
+-------------------------------------------------
+#!/bin/bash
+dhclient -v eth0
+
+mount -t nfs oneplus5:/share/image /home/partimag
+
+ocs-sr -e1 auto -r -ius -j2 -k1 -p reboot -batch restoredisk 2017-07-10-phy-img sda
+-------------------------------------------------
