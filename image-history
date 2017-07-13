@@ -1,10 +1,10 @@
 ##################################################
 I need to remove /etc/sysconfig/rhn/systemid 
-to get the machine unregistered before deployment
+to get the machine unregistered before making new image
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 #################################################
 
-2017-07-07-phy-img
+2017-07-07-19-phy-img
 - bootstrap_lab
 - yum install git
 
@@ -19,3 +19,5 @@ reboot
 vi /etc/sudoers
 - remove rhn registration
 mv /etc/sysconfig/rhn/systemid /etc/sysconfig/rhn/systemid_old
+
+I uploaded this image to the server
