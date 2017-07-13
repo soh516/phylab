@@ -1,10 +1,8 @@
 usb #1: clonezilla
-usb #2: myscript
 boot from clonezilla
 enter command line
 sudo su -
-mount /dev/sdc1 /mnt
-sh /mnt/song-ocs-2
+sh /lib/live/mount/medium/phy-osc
 -------------------------------------------------
 #!/bin/bash
 dhclient -v eth0
