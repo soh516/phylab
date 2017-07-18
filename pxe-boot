@@ -1,7 +1,11 @@
-- request
+- request (NET-1600 jira)
 tftp server
 group and file name: phy-pxe-lab: /nbi_img_phy/pxelinux.0
+
 
 - on pxe server
 cd /tftp
 cp -R nbi_img nbi_img_phy
+
+- request (NET - 1718 jira)
+
