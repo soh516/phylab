@@ -1,4 +1,5 @@
 - make sure computer is registered with network
+- make sure computer is in my pxe group
 
 - deploy image
   make sure it is not registered - "yum repolist"
