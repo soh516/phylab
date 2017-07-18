@@ -36,7 +36,7 @@ then
 fi
 nmcli general hostname $hn
 systemctl restart systemd-hostnamed
-net ads join -U soh516 createcomputer=ResearchComputingOU/PHYOU
+net ads join -U ana095 createcomputer=ResearchComputingOU/PHYOU
 \cp /mnt/eceappinstall/conffiles/nfs /etc/sysconfig/
 \cp /mnt/eceappinstall/conffiles/nsswitch.conf /etc/
 \cp /mnt/eceappinstall/conffiles/sssd_phy.conf /etc/sssd/sssd.conf 
