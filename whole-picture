@@ -4,7 +4,10 @@
 - deploy image
   make sure it is not registered - "yum repolist"
   verify no user list @ login
-  verify hostname is CORRECT
+  verify hostname is CORRECT, if not do following
+  - nmcli general hostname CORRECTHOSTNAME
+  - systemctl restart systemd-hostnamed
+  
 
 - run script
 1. git clone https://github.com/soh516/phylab
