@@ -71,6 +71,7 @@ wget ftp://kermit.columbia.edu/kermit/archives/cku302.zip
 mkdir cku302
 mv cku302.zip cku302
 cd cku302
+unzip cku302.zip
 make -j3 linux
 
 cd
