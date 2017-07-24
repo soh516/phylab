@@ -91,7 +91,7 @@ cd rtems
 cd
 wget https://ftp.rtems.org/pub/rtems/releases/4.10/4.10.2/rtems-4.10.2.tar.bz2
 tar xjf rtems-4.10.2.tar.bz2
-export PATH=/opt/development/rtems/4.12:$PATH
+export PATH=/opt/development/rtems/4.12/bin:$PATH
 cd rtems-4.10.2
 mkdir b-sis
 cd b-sis
