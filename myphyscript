@@ -66,6 +66,9 @@ yum -y install texinfo
 yum -y install python-devel
 yum -y install mkdirhier
 
+yum -y install zlib-devel
+yum -y install ncurses-devel
+
 cd
 wget ftp://kermit.columbia.edu/kermit/archives/cku302.zip
 mkdir cku302
@@ -81,19 +84,23 @@ cd asem51
 sh install.sh
 
 cd
-mkdir -p development/rtems/rsb
-cd development/rtems/rsb
-git clone git://git.rtems.org/rtems-source-builder.git
-cd rtems-source-builder
+mkdir -p development/rtems
+cd development/rtems
+wget https://ftp.rtems.org/pub/rtems/releases/4.11/4.11.0/rtems-source-builder-4.11.0.tar.xz
+tar Jxf rtems-source-builder-4.11.0.tar.xz
+cd rtems-source-builder-4.11.0
 cd rtems
-../source-builder/sb-set-builder --prefix=/opt/development/rtems/4.12 4.12/rtems-m68k
+#all bsp
+../source-builder/sb-set-builder --prefix=/rtems/4.11 4.11/rtems-m68k
+#maybe following is easier
+../source-builder/sb-set-builder --prefix=/rtems/4.11 --with-rtemsbsp=uC5282 4.11/rtems-m68k
 
-cd
-wget https://ftp.rtems.org/pub/rtems/releases/4.10/4.10.2/rtems-4.10.2.tar.bz2
-tar xjf rtems-4.10.2.tar.bz2
-export PATH=/opt/development/rtems/4.12/bin:$PATH
-cd rtems-4.10.2
-mkdir b-sis
-cd b-sis
-../configure --target=m68k-rtems4.12 --enable-rtemsbsp='uC5282'
-make
+#cd
+#wget https://ftp.rtems.org/pub/rtems/releases/4.10/4.10.2/rtems-4.10.2.tar.bz2
+#tar xjf rtems-4.10.2.tar.bz2
+#export PATH=/opt/development/rtems/4.12/bin:$PATH
+#cd rtems-4.10.2
+#mkdir b-sis
+#cd b-sis
+#../configure --target=m68k-rtems4.12 --enable-rtemsbsp='uC5282'
+#make
