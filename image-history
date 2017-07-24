@@ -57,7 +57,7 @@ wget https://ftp.rtems.org/pub/rtems/releases/4.11/4.11.0/rtems-source-builder-4
 tar Jxf rtems-source-builder-4.11.0.tar.xz
 cd rtems-source-builder-4.11.0
 cd rtems
-#all bsp
-#../source-builder/sb-set-builder --prefix=/opt/rtems/4.11 4.11/rtems-m68k
-#following is easier
-../source-builder/sb-set-builder --prefix=/opt/rtems/4.11 --with-rtemsbsp=uC5282 4.11/rtems-m68k
+#all bsp, should work then
+../source-builder/sb-set-builder --prefix=/opt/rtems-4.11 4.11/rtems-m68k
+#following is easier maybe
+#../source-builder/sb-set-builder --prefix=/opt/rtems-4.11 --with-rtemsbsp=uC5282 4.11/rtems-m68k
