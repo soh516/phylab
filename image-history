@@ -24,7 +24,7 @@ I uploaded this image to the server
 
 2017-07-25-phy-img
 - bootstrap
-sh /home/hus/bootstrap_lab.sh
+sh /home/hus/Downloads/bootstrap_lab.sh
 - rtems stuff
 yum -y install gcc
 yum -y install gcc-c++
