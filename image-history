@@ -23,6 +23,8 @@ mv /etc/sysconfig/rhn/systemid /etc/sysconfig/rhn/systemid_old
 I uploaded this image to the server
 
 2017-07-25-phy-img
+- bootstrap
+sh /home/hus/bootstrap_lab.sh
 - rtems stuff
 yum -y install gcc
 yum -y install gcc-c++
@@ -61,3 +63,6 @@ cd rtems
 ../source-builder/sb-set-builder --prefix=/opt/rtems-4.11 4.11/rtems-m68k
 #following is easier maybe
 #../source-builder/sb-set-builder --prefix=/opt/rtems-4.11 --with-rtemsbsp=uC5282 4.11/rtems-m68k
+
+- remove registration
+mv /etc/sysconfig/rhn/systemid /etc/sysconfig/rhn/systemid_old
