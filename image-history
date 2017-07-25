@@ -66,3 +66,7 @@ cd rtems
 
 - remove registration
 mv /etc/sysconfig/rhn/systemid /etc/sysconfig/rhn/systemid_old
+
+2017-07-26-phy-img
+- bootstrap change (see jira sys-838)
+
