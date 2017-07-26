@@ -3,7 +3,6 @@
 
 - deploy image
   make sure it is not registered - "yum repolist"
-  verify no user list @ login
   verify hostname is CORRECT, if not do following
   - nmcli general hostname CORRECTHOSTNAME
   - systemctl restart systemd-hostnamed
@@ -12,9 +11,11 @@
 - run script
 1. git clone https://github.com/soh516/phylab
 2. cd phylab
-3. sh myphyscript - note bootstrap is embedded here
-4. verify nfs mount
-5. verify /home/physics
-6. klist -ke
-7. double check AD
-8. log in with soh516
+3. sh myphyscript (note bootstrap is embedded here. also note you need enter password)
+
+- verifications
+1. verify nfs mount
+2. verify /home/physics
+3. klist -ke
+4. double check AD
+5. log in with soh516
