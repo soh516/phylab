@@ -4,8 +4,8 @@
 - deploy image
   make sure it is not registered - "yum repolist"
   verify hostname is CORRECT, if not do following
-  - nmcli general hostname CORRECTHOSTNAME
-  - systemctl restart systemd-hostnamed
+  1. nmcli general hostname CORRECTHOSTNAME
+  2. systemctl restart systemd-hostnamed
   
 
 - run script
@@ -18,4 +18,4 @@
 2. verify /home/physics
 3. klist -ke
 4. double check AD
-5. log in with soh516
+5. log in with nsid
