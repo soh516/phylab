@@ -4,7 +4,7 @@ to get the machine unregistered before making new image
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 #################################################
 
-2017-07-07-19-phy-img
+2017-07-07-19-phy-img ##I uploaded this image to the server (labelled as "PHY RTEMS LAB - RHEL73")
 - bootstrap_lab
 - yum install git
 
@@ -20,7 +20,6 @@ vi /etc/sudoers
 - remove rhn registration
 mv /etc/sysconfig/rhn/systemid /etc/sysconfig/rhn/systemid_old
 
-I uploaded this image to the server (PHY RTEMS LAB - RHEL73)
 
 2017-07-25-phy-img
 - bootstrap
@@ -67,7 +66,6 @@ cd rtems
 - remove registration
 mv /etc/sysconfig/rhn/systemid /etc/sysconfig/rhn/systemid_old
 
-2017-07-26-phy-img
+2017-07-26-phy-img ## I uploaded this image to the server (labelled as PHY RTEMS LAB - RHEL73 -RTEMS411)
 - bootstrap change (see jira sys-838)
 
-I uploaded this image to the server (labelled as PHY RTEMS LAB - RHEL73 -RTEMS411)
