@@ -57,3 +57,11 @@ mount -a
 
 \cp /mnt/eceappinstall/conffiles/profile /etc/
 
+# rhn stuff
+yum -y install rhncfg-actions
+yum -y install rhncfg
+mkdir -p /etc/sysconfig/rhn/allowed-actions/script
+touch /etc/sysconfig/rhn/allowed-actions/script/run
+yum -y install osad
+systemctl start osad
+systemctl enable osad
