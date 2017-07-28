@@ -60,6 +60,7 @@ mount -a
 # rhn stuff
 yum -y install rhncfg-actions
 yum -y install rhncfg
+yum -y install rhncfg-client
 mkdir -p /etc/sysconfig/rhn/allowed-actions/script
 touch /etc/sysconfig/rhn/allowed-actions/script/run
 yum -y install osad
