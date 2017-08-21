@@ -67,4 +67,4 @@ yum -y install osad
 systemctl start osad
 systemctl enable osad
 
-# serial permissioin from IJM
+# serial permissioin from IJM (test)
