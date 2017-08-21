@@ -68,7 +68,7 @@ systemctl start osad
 systemctl enable osad
 
 # serial permissioin from IJM
-yum install minicom
+yum -y install minicom
 chgrp dialout /usr/bin/minicom
 chmod g+s /usr/bin/minicom
 
@@ -76,7 +76,7 @@ cd /tmp
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 rpm -Uvh epel-release-latest-7.noarch.rpm
 rm epel-release-latest-7.noarch.rpm
-yum install ckermit
+yum -y install ckermit
 chgrp dialout /usr/bin/kermit
 chmod g+s /usr/bin/kermit
 
