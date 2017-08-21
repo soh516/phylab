@@ -66,3 +66,5 @@ touch /etc/sysconfig/rhn/allowed-actions/script/run
 yum -y install osad
 systemctl start osad
 systemctl enable osad
+
+# serial permissioin from IJM
