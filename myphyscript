@@ -80,3 +80,7 @@ yum -y install ckermit
 chgrp dialout /usr/bin/kermit
 chmod g+s /usr/bin/kermit
 
+chmod 666 /dev/ttyS0
+chmod 666 /dev/ttyS1
+chmod 666 /dev/ttyS2
+chmod 666 /dev/ttyS3
