@@ -80,7 +80,17 @@ yum -y install ckermit
 chgrp dialout /usr/bin/kermit
 chmod g+s /usr/bin/kermit
 
+# This is not working after a reboot
 chmod 666 /dev/ttyS0
 chmod 666 /dev/ttyS1
 chmod 666 /dev/ttyS2
 chmod 666 /dev/ttyS3
+
+# Permanent solution for reboot
+touch /etc/udev/rules.d/60-serial.rules
+echo "KERNEL=="ttyS0", MODE="0666"" >> /etc/udev/rules.d/60-serial.rules
+echo "KERNEL=="ttyS1", MODE="0666"" >> /etc/udev/rules.d/60-serial.rules
+echo "KERNEL=="ttyS2", MODE="0666"" >> /etc/udev/rules.d/60-serial.rules
+echo "KERNEL=="ttyS3", MODE="0666"" >> /etc/udev/rules.d/60-serial.rules
+
+reboot
