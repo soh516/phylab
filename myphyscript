@@ -98,5 +98,6 @@ cd
 crontab -l > mycron
 echo "@reboot chmod 666 /dev/ttyS*" >> mycron
 crontab mycron
-rm mycron
+rm -f mycron
+
 reboot
