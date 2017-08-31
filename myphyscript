@@ -126,4 +126,6 @@ echo "banner-message-text='$hn'" >> /etc/dconf/db/gdm.d/01-banner-message
 dconf update
 #################################################################
 
+yum -y install texmaker
+
 reboot
