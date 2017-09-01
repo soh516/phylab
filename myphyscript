@@ -132,5 +132,6 @@ yum -y install joe
 yum -y install vim-X11
 yum -y install kwrite
 yum -y groupinstall kde-desktop
+yum -y install tftp
 
 reboot
