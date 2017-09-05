@@ -141,4 +141,8 @@ echo "export RTEMS_CUSTOM=/opt/rtems-4.11/make/custom" >> /etc/profile.d/ep413.s
 echo "export RTEMS_MAKEFILE_PATH=/opt/rtems-4.11/m68k-rtems4.11/uC5282" >> /etc/profile.d/ep413.sh
 echo "export PROJECT_ROOT=/opt/rtems-4.11" >> /etc/profile.d/ep413.sh
 
+### kde as only option for login ##############################
+rpm -e gnome-session-xsession gnome-classic-session
+systemctl restart gdm.service
+
 reboot
