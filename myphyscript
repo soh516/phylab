@@ -148,8 +148,8 @@ systemctl restart gdm.service
 
 ### printer and papercut ######################################
 yum -y install foomatic hplip
-lpadmin -p physics6 -v smb://arts-lab-spool/Physics_6 -m foomatic:Lexmark-T650-Postscript.ppd -E
-lpadmin -d physics6
+lpadmin -p PhysicsLounge -v smb://arts-lab-spool/Physics_Lounge -m foomatic:Lexmark-T640-Postscript.ppd -o auth-info-required=username,password -E
+lpadmin -d PhysicsLounge
 
 cd 
 wget https://www.cs.usask.ca/cpas/pcclient-linux.zip
