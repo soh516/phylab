@@ -133,6 +133,7 @@ yum -y install vim-X11
 yum -y install kwrite
 yum -y groupinstall kde-desktop
 yum -y install tftp
+yum -y install ftp
 
 ### Setup env and path ######################################### 
 touch /etc/profile.d/ep413.sh
@@ -144,5 +145,16 @@ echo "export PROJECT_ROOT=/opt/rtems-4.11" >> /etc/profile.d/ep413.sh
 ### kde as only option for login ##############################
 rpm -e gnome-session-xsession gnome-classic-session
 systemctl restart gdm.service
+
+### printer and papercut ######################################
+yum -y install foomatic hplip
+lpadmin -p physics6 -v smb://arts-lab-spool/Physics_6 -m foomatic:Lexmark-T650-Postscript.ppd -E
+lpadmin -d physics6
+
+cd 
+wget https://www.cs.usask.ca/cpas/pcclient-linux.zip
+unzip pcclient-linux.zip
+mv pcclient-linux /opt/
+echo "sh /opt/pcclient-linux/pc-client-linux.sh &" >> /etc/profile
 
 reboot
