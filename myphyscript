@@ -159,4 +159,9 @@ rpm -e gnome-session-xsession gnome-classic-session
 # I do not think I need the following if I am going to reboot anyway
 #systemctl restart gdm.service
 
+mkdir -p /opt/nfsapps
+echo "nfsfiles.usask.ca:/app    /opt/nfsapps    nfs    sec=krb5,exec,vers=4,_netdev   0  0" >> /etc/fstab
+mount -a
+ln -s /opt/nfsapps/campus_matlab/R2017b/bin/matlab /usr/local/bin/matlab
+
 reboot
