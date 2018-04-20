@@ -159,9 +159,28 @@ rpm -e gnome-session-xsession gnome-classic-session
 # I do not think I need the following if I am going to reboot anyway
 #systemctl restart gdm.service
 
+# install matlab
 mkdir -p /opt/nfsapps
 echo "nfsfiles.usask.ca:/app    /opt/nfsapps    nfs    sec=krb5,exec,vers=4,_netdev   0  0" >> /etc/fstab
 mount -a
 ln -s /opt/nfsapps/campus_matlab/R2017b/bin/matlab /usr/local/bin/matlab
+
+# install logic
+cd /tmp
+wget "http://downloads.saleae.com/logic/1.2.18/Logic%201.2.18%20(64-bit).zip"
+unzip Logic\ 1.2.18\ \(64-bit\).zip
+mv Logic\ 1.2.18\ \(64-bit\) /opt/logic
+rm -f Logic\ 1.2.18\ \(64-bit\).zip
+cd /opt/logic/Drivers/
+./install_driver.sh
+# double check /etc/udev/rules.d/99-SaleaeLogic.rules
+cd /usr/local/bin
+touch logic
+echo "#!/bin/bash" >> logic
+echo "if [ ! -d ~/logic ]; then" >> logic
+echo "  cp -r /opt/logic ~/;" >> logic
+echo "fi" >> logic
+echo "~/logic/Logic" >> logic
+chmod 755 logic
 
 reboot
