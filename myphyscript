@@ -183,4 +183,8 @@ echo "fi" >> logic
 echo "~/logic/Logic" >> logic
 chmod 755 logic
 
+yum -y install chromium
+setsebool -P use_nfs_home_dirs 1
+
+
 reboot
