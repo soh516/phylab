@@ -1,0 +1,20 @@
+1. Wiring - Ethernet cable to Ethernet -A, Serial cable to RS232-A (DCE)
+2. minicom setup parameters
+ baudrate         9600
+ bits             8
+ parity           N
+ stopbits         1
+ rtscts           No
+ xonxoff          Yes
+3. "minicom -D /dev/ttyS0" to establish communications
+4. reset ColdFire board (setenv, printenv etc available)
+5. To start TFTP server on ColdFire board, type "tftp"
+6. Edit init.c in lab 4 of EP413 by modifying IP of the board and name of the board. Compile with make. 
+7. tftp IPOfBoard
+v for Verbose mode
+b for octet
+put tasks.ralf
+8. "goram" with minicom console to load binary
+9. Use a web browser to check the result by pointing at the IP of the board
+
+
