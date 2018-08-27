@@ -1,4 +1,4 @@
-1. Wiring - Ethernet cable to Ethernet -A, Serial cable to RS232-A (DCE)
+1. Wiring - Ethernet cable to Ethernet - A, Serial cable to RS232-A (DCE), PS has to be 12 VAC (there were issues when 12 VDC is used)
 2. minicom setup parameters
  baudrate         9600
  bits             8
